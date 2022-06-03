@@ -1,16 +1,40 @@
 const mongoose = require('mongoose')
 
 const UserSchema = mongoose.Schema({
-  title: {
+  name: {
     type: String,
     required: true,
   },
-  description: {
+  user_name: {
     type: String,
   },
-  date: {
-    type: Date,
-    default: Date.now,
+  password: {
+    type: String,
+  },
+  gender: {
+    type: String,
+  },
+  NIC: {
+    type: String,
+  },
+  email: {
+    type: String,
+  },
+  No: {
+    type: String,
+  },
+  NIC: {
+    type: String,
+  },
+  street: {
+    type: String,
+  },
+  sity: {
+    type: String,
+  },
+  activation_key: {
+    type: String,
+    default: null,
   },
 })
 

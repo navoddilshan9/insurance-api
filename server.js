@@ -9,7 +9,6 @@ var connectDB = require('./config/dbConfig.js')
 //connect with DB
 connectDB()
 
-app.use(express.json())
 app.use(bodyParser.json())
 
 app.use(function (req, res, next) {
