@@ -1,10 +1,9 @@
 const mongoose = require('mongoose')
-
-const URL =
-  'mongodb+srv://admin:admin123@cluster0.baorn.mongodb.net/?retryWrites=true&w=majority'
+require('dotenv/config')
+const URL = process.env.DB_CONNECTION
 
 const connectDB = async () => {
-  mongoose.connect(URL, {
+  await mongoose.connect(URL, {
     useUnifiedTopology: true,
     useNewUrlParser: true,
     // useCreateIndex: true,
