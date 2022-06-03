@@ -14,22 +14,19 @@ const UserSchema = mongoose.Schema({
   gender: {
     type: String,
   },
-  NIC: {
+  nic: {
     type: String,
   },
   email: {
     type: String,
   },
-  No: {
-    type: String,
-  },
-  NIC: {
+  no: {
     type: String,
   },
   street: {
     type: String,
   },
-  sity: {
+  city: {
     type: String,
   },
   activation_key: {
