@@ -12,7 +12,7 @@ const add = async (req, res) => {
       user
         .save()
         .then((user) => {
-          res.send(user)
+          res.status(200).send(user)
         })
         .catch((err) => {
           res.status(500).send(err)
@@ -49,7 +49,7 @@ const getUserById = async (req, res) => {
     })
 }
 
-const geAllUsers = async (req, res) => {
+const getAllUsers = async (req, res) => {
   User.find()
     .then((users) => {
       res.status(200).send(users)
@@ -58,4 +58,13 @@ const geAllUsers = async (req, res) => {
       res.status(500).send(err)
     })
 }
-module.exports = { add, login, getUserById, geAllUsers }
+const deleteUserById = async (req, res) => {
+  User.findByIdAndRemove(req.body.user_id)
+    .then((user) => {
+      res.status(200).send(user)
+    })
+    .catch((err) => {
+      res.status(500).send(err)
+    })
+}
+module.exports = { add, login, getUserById, getAllUsers, deleteUserById }

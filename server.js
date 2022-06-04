@@ -22,10 +22,14 @@ app.use(function (req, res, next) {
 app.get('/', (req, res) => {
   res.send('Hello World!')
 })
+
 //Import Routes
 const usersRouter = require('./routes/userRouter')
+const accidentRouter = require('./routes/accidentRouter')
+
 //routes
-app.use('/users', usersRouter)
+app.use('/api/v1/users', usersRouter)
+app.use('/api/v1/accident', accidentRouter)
 
 const user = app.listen(port, () => {
   console.log(`App listening at http://localhost:${port}`)
